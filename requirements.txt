@@ -2,3 +2,4 @@ openai
 chromadb
 python-dotenv
 streamlit
+grpcio==1.78.2
