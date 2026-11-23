@@ -1,0 +1,29 @@
+question,expected_source
+How do I set up VPN on a Mac?,vpn-mac.md
+How do I connect to the VPN from my Windows laptop?,vpn-windows.md
+I forgot my password,password-reset.md
+How often do passwords expire?,password-reset.md
+My printer shows offline,printer-setup.md
+How do I add the office printer?,printer-setup.md
+Outlook keeps asking me for a password,email-outlook-setup.md
+How do I add my work email to Outlook?,email-outlook-setup.md
+What is the Wi-Fi network for company laptops?,wifi-office.md
+Can I use my personal phone on the office Wi-Fi?,wifi-office.md
+Wi-Fi is connected but websites do not load,wifi-troubleshooting.md
+How do I set up the authenticator app?,two-factor-auth.md
+I got a new phone and need to set up 2FA again,two-factor-auth.md
+My laptop is very slow,laptop-slow.md
+I cannot see drive S:,shared-drive-access.md
+I get Access denied on a shared folder,shared-drive-access.md
+How can I get new software installed on my laptop?,software-install-request.md
+My laptop was stolen,lost-or-stolen-device.md
+How do I request vacation days?,
+What is the company dress code?,
+How do I book a meeting room?,
+Where can I find my payslip?,
+Where can I park my car at the office?,
+How do I submit an expense report?,
+Who is the CEO of the company?,
+How do I change my email signature in Outlook?,
+How do I connect a second monitor to my laptop?,
+How do I back up my files to the cloud?,
