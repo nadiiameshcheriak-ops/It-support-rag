@@ -64,7 +64,7 @@ Run it yourself: `python eval/run_eval.py` (the `Settings:` line at the top show
 - **Didn't work at first:** an initial threshold of 0.6 let an out-of-scope question ("How do I request vacation days?", distance 0.580) through. The model refused to invent an answer, but the threshold should have caught it.
 - **No single threshold separates everything:** after I added more out-of-scope questions, the closest one (Outlook email signature, 0.535) turned out to be slightly *closer* to the knowledge base than the hardest in-scope question ("I cannot see drive S:", 0.538). A threshold of 0.5 rejects all 10 out-of-scope questions but also rejects that in-scope one; 0.55 accepts all in-scope questions but lets the signature question through.
 - **How I handled it:** I kept 0.55 and rely on the prompt as a second layer. In a manual test the signature question passed the threshold, but the model answered "I do not know". I verified this on one question only.
-- **Relative margin helps with sources:** in an earlier run on 22 questions (threshold 0.5), a loosely related extra document appeared among the sources for 5 of 18 in-scope questions without a margin (13/18 clean), versus 1 of 18 with a margin of 0.05 or 0.1 (17/18 clean), without losing the correct document.
+- **Relative margin helps with sources:** at threshold 0.55, without a margin a loosely related extra document appeared among the sources for 6 of 18 in-scope questions (12/18 clean). With a margin of 0.05 or 0.1 all 18 were clean, and the correct document was kept in every case. Larger margins (0.15 and 0.2) let most of the extra documents back in (13/18 and 12/18 clean).
 - **Sensitive to wording:** on the 700/140 index, removing the colon from "I cannot see drive S:" changed the distance from 0.536 to 0.555, just over the threshold, and the assistant answered that it could not find it.
 
 ## Limitations
@@ -115,6 +115,10 @@ streamlit run app.py             # web interface at http://localhost:8501
 python src/answer.py             # or: command-line version with debug distances
 python eval/run_eval.py          # evaluation
 ```
+
+### Troubleshooting (Windows)
+
+If `python src/ingest.py` fails with `ImportError: DLL load failed while importing cygrpc: An Application Control policy has blocked this file`, Windows Smart App Control is blocking a newer `grpcio` build. `requirements.txt` pins `grpcio==1.78.2`, which worked in my setup.
 
 ## Next steps
 
